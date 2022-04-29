@@ -1,14 +1,14 @@
 import React from 'react'
 import { GlobalStyle } from './styles/GlobalStyle'
-
 import { ThemeProvider } from 'styled-components'
-import Theme from './styles/Theme'
+import { Router } from './router/Router'
+import Theme from './styles/theme'
 
 const App = () => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
-      <h1>App</h1>
+      <Router />
     </ThemeProvider>
   )
 }
