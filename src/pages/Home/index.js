@@ -1,16 +1,19 @@
 import React from "react"
 import axios from "axios"
 import Icon from "./lupa.png"
-import Img from "./img.jpg"
-import css from "./index.css"
+import  "./index.css"
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
+import { goToRestaurant } from "../../router/Coordinator";
 
 
 
 
 export const Home = () => {
-<<<<<<< HEAD
+
+  const navigate = useNavigate()
+
   const headers = {
     headers: {
       auth: localStorage.getItem("token")
@@ -19,19 +22,40 @@ export const Home = () => {
  
   const URL = 'https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants'
   
-  const [restaurante, SetRestaurante] =  useState()
+  const [restaurante, SetRestaurante] =  useState("")
  
   useEffect(() => {
   axios
       .get(URL, headers)
       .then((res) => {
-        SetRestaurante(res.data)})
+        SetRestaurante(res.data.restaurants)})
       .catch((err) => {
         console.log("ERRO:", err.response);
       });
     }, []);
+
+  const categorias = restaurante && restaurante.map((i)=>{
+    return <p key={i.id}>{i.category}</p>
+  })
+
+  const card = restaurante && restaurante.map((i)=>{
+    return(<>
+   <div className="cardRestaurante" key={i.id} onClick={() => goToRestaurant(navigate, i.id)}>
+      <img src={i.logoUrl}/>
+      <div>
+        <div>
+           <p>{i.name}</p>
+        </div>
+        <div>
+           <p>{i.deliveryTime} min</p>
+           <p>Frete R${i.shipping}</p>
+        </div>
+      </div>
+    </div>
+    </>)
+  })
   
- 
+console.log({restaurante})
   return (
     <>
     <div className="Header">
@@ -42,42 +66,10 @@ export const Home = () => {
       <input placeholder="Restaurante"/>
     </div>
     <div className="categorias">
-      <p>Burguer</p>
-      <p>Asiática</p>
-      <p>Massas</p>
-      <p>Saudáveis</p>
-      <p>Saudáveis</p>
-      <p>Saudáveis</p>
-      <p>Saudáveis</p>
-      <p>Saudáveis</p>
-      <p>Saudáveis</p>
+       {categorias}
     </div>
-    <div className="cardRestaurante">
-     
-        <img src={Img}/>
-     
-      <div>
-        <div>
-        <p>Vinil Butantã</p>
-        </div>
-        <div>
-        <p>50 - 60 min</p>
-        <p>Frete R$6,00</p>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    </>
-  )
-=======
-  
-
-  return 'Home'
->>>>>>> 728cdff4195e71a1009fd38c2293fd3656311e5b
+   
+    {card}
+   
+     </> ) 
 }
