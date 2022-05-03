@@ -3,10 +3,33 @@ import axios from "axios"
 import Icon from "./lupa.png"
 import Img from "./img.jpg"
 import css from "./index.css"
+import { useState } from "react";
+import { useEffect } from "react";
+
 
 
 export const Home = () => {
+  const headers = {
+    headers: {
+      auth: localStorage.getItem("token")
+    }
+  };
+ 
+  const URL = 'https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants'
   
+  const [restaurante, SetRestaurante] =  useState()
+ 
+  useEffect(() => {
+  axios
+      .get(URL, headers)
+      .then((res) => {
+        SetRestaurante(res.data)})
+      .catch((err) => {
+        console.log("ERRO:", err.response);
+      });
+    }, []);
+  
+ 
   return (
     <>
     <div className="Header">
