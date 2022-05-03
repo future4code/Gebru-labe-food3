@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { Login } from '../pages/Login'
-import { Home } from '../pages/Home'
+import { Login } from '../pages/Login/index'
+import { Home } from '../pages/Home/index'
 import { Restaurant } from '../pages/Restaurant'
 import { Cart } from '../pages/Cart'
 import { Profile } from '../pages/Profile'
-
+import {Cadastro} from "../pages/Login/Cadastro/Cadastro"
+import { Endereco } from '../pages/Login/Endereco/Endereco'
 export const Router = () => {
   return (
     <BrowserRouter>
@@ -16,6 +17,8 @@ export const Router = () => {
         <Route exact path='/restaurante' element={<Restaurant />} />
         <Route exact path='/carrinho' element={<Cart />} />
         <Route exact path='/perfil' element={<Profile />} />
+        <Route exact path='/cadastro' element={<Cadastro/>} />
+        <Route exact path='/endereco' element={<Endereco/>} />
         <Route exact path='*' element={<h1>ERRO DE PÁGINA!!</h1>} />
       </Routes>
     </BrowserRouter>

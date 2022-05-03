@@ -8,7 +8,9 @@ import { useEffect } from "react";
 
 
 
+
 export const Home = () => {
+<<<<<<< HEAD
   const headers = {
     headers: {
       auth: localStorage.getItem("token")
@@ -73,4 +75,9 @@ export const Home = () => {
     
     </>
   )
+=======
+  
+
+  return 'Home'
+>>>>>>> 728cdff4195e71a1009fd38c2293fd3656311e5b
 }
