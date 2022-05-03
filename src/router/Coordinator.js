@@ -17,3 +17,11 @@ export const goToCart = navigate => {
 export const goToProfile = navigate => {
   navigate('/perfil')
 }
+
+export const goToCadastro = navigate => {
+  navigate('/cadastro')
+}
+
+export const goToEndereco =navigate => {
+  navigate('/endereco ')
+}
