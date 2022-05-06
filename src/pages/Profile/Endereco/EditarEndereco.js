@@ -4,6 +4,9 @@ import { API } from "../../../services/Api";
 import { useNavigate } from "react-router-dom";
 import { goToEndereco } from "../../../router/Coordinator";
 import { goToLogin } from "../../../router/Coordinator";
+import {ContainerEndereco} from "./styles"
+import {BarraDenavegaçao} from "../../../components/barradenavegaçao"
+import { FormContainer } from "./styles";
 
 export const EditarEndereco = () => {
   const navigate = useNavigate();
@@ -13,16 +16,16 @@ export const EditarEndereco = () => {
     neighbourhood: "",
     city: "",
     state: "",
-    complement: ""
+    complement: "",
   });
 
-  const submitEditarEndereco= (event) => {
+  const submitEditarEndereco = (event) => {
     event.preventDefault();
 
     API.put(`/address`, form)
       .then((response) => {
         window.localStorage.getItem("token", response.data.token);
-        alert("Perfil criado com sucesso");
+        alert("Endereço editado com sucesso");
         goToEndereco(navigate);
         clearInput();
       })
@@ -32,10 +35,12 @@ export const EditarEndereco = () => {
   };
 
   return (
-    <>
-      <button onClick={() => goToLogin(navigate)}>Voltar</button>
+    <ContainerEndereco>
+      <BarraDenavegaçao>Endereço</BarraDenavegaçao>
+      {/* <button onClick={() => goToLogin(navigate)}>Voltar</button> */}
       <h1>Endereço</h1>
-      <form onSubmit={submitPerfil}>
+
+      <FormContainer onSubmit={submitEditarEndereco}>
         <input
           name={"street"}
           value={form.street}
@@ -54,14 +59,14 @@ export const EditarEndereco = () => {
           required
           type={"number"}
         />
- <input
+        <input
           name={"complement"}
           value={form.complement}
           onChange={onChange}
           placeholder={"Complemento"}
           required
           type={"text"}
-          />
+        />
         <input
           name={"neighbourhood"}
           value={form.neighbourhood}
@@ -73,26 +78,25 @@ export const EditarEndereco = () => {
           type={"text"}
           // maxLength={11}
         />
-         <input
+        <input
           name={"city"}
           value={form.city}
           onChange={onChange}
           placeholder={"Cidade"}
           required
           type={"text"}
-          />
-           <input
+        />
+        <input
           name={"state"}
           value={form.state}
           onChange={onChange}
           placeholder={"Estado"}
           required
           type={"text"}
-          />
+        />
 
         <button>Salvar</button>
-      </form>
-    </>
+      </FormContainer>
+    </ContainerEndereco>
   );
 };
-
