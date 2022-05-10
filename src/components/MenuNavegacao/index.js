@@ -23,5 +23,6 @@ export const MenuNavegacao= () => {
      <img src={casaIcon} onClick={()=>goToHome(navigate)}/>
      <img src={carrinhoIcon}  onClick={()=>goToCart(navigate)}/>
      <img src={usuarioIcon} onClick={()=>goToProfile(navigate)}/>
+     
      </div> ) 
 }
