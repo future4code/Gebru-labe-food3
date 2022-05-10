@@ -8,5 +8,8 @@ export default {
     grayVariant: '#d0d0d0',
     danger: '#e02020',
     success: '#5cb646'
-  }
+
+  },
+  padding:"5px",
+  margin: "5px",
 }
