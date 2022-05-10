@@ -7,14 +7,21 @@
   
 }
 
-.Header{
+.Header-buscar{
     text-align: center;
     padding: 15px;
     border-bottom: 2px solid #eeeeee;
+    display: flex;
+    align-items: center;
 }
-.Header h2{
+.Header-buscar h2{
   font-weight: normal;
   font-size: 16px;
+  margin-left: 150px;
+  
+}
+.Header-buscar img {
+    width: 20px;
 }
 
 .input{
@@ -80,4 +87,8 @@
     color: #d0d0d0;
     margin-bottom: 10px;
     
+}
+.return-p{
+    text-align: center;
+    margin-top: 15px;
 }
