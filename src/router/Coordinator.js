@@ -2,9 +2,12 @@ export const goToLogin = (navigate) => {
   navigate("/");
 };
 
-export const goToHome = (navigate) => {
-  navigate("/home");
-};
+export const goToHome = navigate => {
+  navigate('/home')
+}
+export const goToBuscar = navigate => {
+  navigate('/home/busca')
+}
 
 export const goToRestaurant = (navigate, restaurantId) => {
   navigate(`/restaurante/${restaurantId}`);

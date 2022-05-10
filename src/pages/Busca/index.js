@@ -1,16 +1,17 @@
 import React from "react"
 import axios from "axios"
 import Icon from "./lupa.png"
+import Seta from "./seta.png"
 import  "./index.css"
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
-import { goToRestaurant, goToBuscar } from "../../router/Coordinator";
-import { MenuNavegacao } from "../../components/MenuNavegacao";
+import { goToRestaurant, goToHome } from "../../router/Coordinator";
 
 
 
-export const Home = () => {
+
+export const Busca = () => {
 
   const navigate = useNavigate()
 
@@ -23,7 +24,8 @@ export const Home = () => {
   const URL = 'https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants'
   
   const [restaurante, SetRestaurante] =  useState("")
-  const [categ, SetCateg] = useState()
+  const [input, SetInput] = useState("")
+ 
  
   useEffect(() => {
   axios
@@ -40,13 +42,9 @@ export const Home = () => {
   const card = restaurante && restaurante
   .filter(i => {
     
-     if (categ == i.category) {
-      
-      return i.category  
-    } else {
-      return i
+    if(input){
+      return i.name.toLowerCase().includes(input.toLowerCase())
     }
-     
   }
    )
   .map((i)=>{
@@ -66,35 +64,23 @@ export const Home = () => {
     </>)
   })
 
- 
-  const onClickCat = (category) => {
-    
-    SetCateg(category)
- 
-    console.log({categ})
-   
+  const onchangeInput = (e) => {
+       SetInput(e.target.value)
+       
   }
-  const categorias = restaurante && restaurante.map((i)=>{
-    return <p key={i.id} onClick={() => onClickCat(i.category)} >{i.category}</p>
-  })
-
   
-console.log({restaurante})
+  
   return (
     <>
-    <div className="Header">
-      <h2>FutureEats</h2>
+    <div className="Header-buscar">
+    <img src={Seta} onClick={() => goToHome(navigate)} />
+      <h2>Busca</h2>
     </div>
     <div className="input">
       <img src={Icon} />
-      { <input placeholder="Restaurante" onClick={()=> goToBuscar(navigate)}/> }
+      <input placeholder="Restaurante" onChange={onchangeInput} value={input}/> 
     </div>
-    <div className="categorias">
-       {categorias}
-    </div>
-   
-    {card}
-    <MenuNavegacao/>
+    {input === "" ? <p className="return-p">Busque por nome do restaurante</p> : card }
    
      </> ) 
 }

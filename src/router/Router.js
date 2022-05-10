@@ -10,12 +10,14 @@ import { EditarEndereco } from '../pages/Profile/Endereco/EditarEndereco'
 import {MeuPerfil} from '../pages/Profile/MeuPerfil/MeuPerfil'
 import {Cadastro} from "../pages/Login/Cadastro/Cadastro"
 import { Endereco } from '../pages/Login/Endereco/Endereco'
+import { Busca } from '../pages/Busca'
 export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path='/' element={<Login />} />
         <Route exact path='/home' element={<Home />} />
+        <Route exact path='/home/busca' element={<Busca />} />
         <Route exact path='/restaurante/:restaurantId' element={<Restaurant />} />
         <Route exact path='/carrinho' element={<Cart />} />
         <Route exact path='/editar/perfil' element={<Perfil/>} />
