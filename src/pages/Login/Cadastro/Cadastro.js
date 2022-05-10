@@ -7,6 +7,7 @@ import { goToLogin } from "../../../router/Coordinator"
 
 
 
+
 export const Cadastro = () =>{
 
     const navigate = useNavigate()
@@ -38,10 +39,11 @@ export const Cadastro = () =>{
 
     return (
         <div>
+            
            <button onClick={()=>goToLogin(navigate)}>Voltar</button>
             <h1>cadastro</h1>
 
-            <form onSubmit={submitCadastro}>
+             <form onSubmit={submitCadastro}>
                 <input
                     name={"name"}
                     value={form.name}
@@ -100,7 +102,7 @@ export const Cadastro = () =>{
 
 
 
-        <button onClick={()=>goToEndereco(navigate)}> endereço </button>
+        <button onClick={()=>goToEndereco(navigate)}> endereço </button> 
         </div>
     )
 } 
