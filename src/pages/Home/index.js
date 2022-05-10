@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import { goToRestaurant, goToBuscar } from "../../router/Coordinator";
-
+import { MenuNavegacao } from "../../components/MenuNavegacao";
 
 
 
@@ -92,6 +92,7 @@ console.log({restaurante})
     </div>
    
     {card}
+    <MenuNavegacao/>
    
      </> ) 
 }

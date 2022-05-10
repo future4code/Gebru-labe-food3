@@ -1,0 +1,22 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.39px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+.menu-navegacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    border-top: 2px solid #eeeeee;
+}
+.menu-navegacao img {
+    width: 50px; 
+    padding: 5px;
+}
