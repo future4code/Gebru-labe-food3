@@ -6,7 +6,8 @@ import { goToEndereco } from "../../../router/Coordinator";
 import { goToLogin } from "../../../router/Coordinator";
 import {ContainerEndereco} from "./styles"
 import {BarraDenavegaçao} from "../../../components/barradenavegaçao"
-import { FormContainer } from "./styles";
+import { FormContainer,InputPlac,SubmitButto,ContainerButton} from "./styles";
+
 
 export const EditarEndereco = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export const EditarEndereco = () => {
       <h1>Endereço</h1>
 
       <FormContainer onSubmit={submitEditarEndereco}>
-        <input
+        <InputPlac
           name={"street"}
           value={form.street}
           onChange={onChange}
@@ -51,7 +52,7 @@ export const EditarEndereco = () => {
           // title={"Mínimo 3 caracteres"}
           type={"text"}
         />
-        <input
+        <InputPlac
           name={"number"}
           value={form.number}
           onChange={onChange}
@@ -59,7 +60,7 @@ export const EditarEndereco = () => {
           required
           type={"number"}
         />
-        <input
+        <InputPlac
           name={"complement"}
           value={form.complement}
           onChange={onChange}
@@ -67,7 +68,7 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-        <input
+        <InputPlac
           name={"neighbourhood"}
           value={form.neighbourhood}
           onChange={onChange}
@@ -78,7 +79,7 @@ export const EditarEndereco = () => {
           type={"text"}
           // maxLength={11}
         />
-        <input
+        <InputPlac
           name={"city"}
           value={form.city}
           onChange={onChange}
@@ -86,7 +87,7 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-        <input
+        <InputPlac
           name={"state"}
           value={form.state}
           onChange={onChange}
@@ -94,8 +95,9 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-
-        <button>Salvar</button>
+        <ContainerButton>
+        <SubmitButto>Salvar</SubmitButto>
+        </ContainerButton>
       </FormContainer>
     </ContainerEndereco>
   );
