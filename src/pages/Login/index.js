@@ -19,12 +19,8 @@ export const Login = () => {
     }
   )
 
-
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
+    
+ 
   const submitLogin = (event) => {
     event.preventDefault()
    
@@ -78,10 +74,11 @@ export const Login = () => {
              
               // pattern={'^.{3,}'}
               // title={'A senha deve ter no mínimo 3 caracteres'}
+              
             />
-           
+             
         </RectangleSenha>
-        
+
        
         <ContainerButton> 
           <ButtonDiv>
