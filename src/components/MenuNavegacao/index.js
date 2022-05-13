@@ -9,9 +9,6 @@ import { goToCart } from "../../router/Coordinator"
 import { goToProfile } from "../../router/Coordinator"
 
 
-
-
-
 export const MenuNavegacao= () => {
 
   const navigate = useNavigate()

@@ -26,13 +26,16 @@ margin-left:114px;
 
 `
 
-export const BarraDenavegaçao = () => {
+export const BarraDenavegaçao = (props) => {
   const navigate = useNavigate();
+
 
   return (
     <BarraDeNavegaçaoStyled>
       <IconSeta onClick={()=> goBack (navigate)} src={iconSeta} />
-      <H2Endereco>Endereço</H2Endereco>
+      <H2Endereco>{props.pageName}</H2Endereco>
     </BarraDeNavegaçaoStyled>
   );
 };
+//  <button onClick={() => goToLogin(navigate)}>Voltar</button>
+//       <h1>Editar</h1>

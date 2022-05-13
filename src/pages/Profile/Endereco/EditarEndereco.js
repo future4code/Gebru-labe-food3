@@ -4,9 +4,9 @@ import { API } from "../../../services/Api";
 import { useNavigate } from "react-router-dom";
 import { goToEndereco } from "../../../router/Coordinator";
 import { goToLogin } from "../../../router/Coordinator";
-import {ContainerEndereco} from "./styles"
+import {ContainerEndereco} from "./styledEndereço"
 import {BarraDenavegaçao} from "../../../components/barradenavegaçao"
-import {InputPlac,SubmitButto,ContainerButton,LabelLogradouro, Logradouro,LabelNumero,Numero,LabelComplemento,Complemento,LabelBairro,Bairro,LabelCidade,Cidade,LabelEstado,Estado} from "./styles"
+import {InputPlac,SubmitButto,ContainerButton,LabelLogradouro, Logradouro,LabelNumero,Numero,LabelComplemento,Complemento,LabelBairro,Bairro,LabelCidade,Cidade,LabelEstado,Estado} from "./styledEndereço"
 
 export const EditarEndereco = () => {
   const navigate = useNavigate();
@@ -36,7 +36,10 @@ export const EditarEndereco = () => {
 
   return (
     <ContainerEndereco>
-      <BarraDenavegaçao>Endereço</BarraDenavegaçao>
+      <BarraDenavegaçao
+      pageName={"Endereço"}
+      
+      />
       {/* <button onClick={() => goToLogin(navigate)}>Voltar</button> */}
      
 

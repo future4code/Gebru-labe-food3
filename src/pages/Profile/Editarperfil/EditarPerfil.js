@@ -4,6 +4,8 @@ import { API } from "../../../services/Api";
 import { useNavigate } from "react-router-dom";
 import { goToEndereco } from "../../../router/Coordinator";
 import { goToLogin } from "../../../router/Coordinator";
+import {BarraDenavegaçao} from "../../../components/barradenavegaçao"
+import{ LabelNome,Nome,LabelEmail,Email,LabelCpf,CPF} from "./styledEditarPerfil";
 
 export const Perfil = () => {
   const navigate = useNavigate();
@@ -30,9 +32,12 @@ export const Perfil = () => {
 
   return (
     <>
-      <button onClick={() => goToLogin(navigate)}>Voltar</button>
-      <h1>Editar</h1>
+      <BarraDenavegaçao
+      pageName={"Editar"}
+      />
       <form onSubmit={submitPerfil}>
+        <LabelNome>Nome</LabelNome>
+        <Nome>
         <input
           name={"name"}
           value={form.name}
@@ -43,6 +48,9 @@ export const Perfil = () => {
           title={"Mínimo 3 caracteres"}
           type={"name"}
         />
+        </Nome>
+        <LabelEmail>Email</LabelEmail>
+        <Email>
         <input
           name={"email"}
           value={form.email}
@@ -51,7 +59,10 @@ export const Perfil = () => {
           required
           type={"email"}
         />
+        </Email> 
 
+      <LabelCpf>CPF</LabelCpf>
+      <CPF>
         <input
           name={"cpf"}
           value={form.cpf}
@@ -63,6 +74,7 @@ export const Perfil = () => {
           type={"Number"}
           maxLength={11}
         />
+        </CPF>
         <button>Salvar</button>
       </form>
     </>
