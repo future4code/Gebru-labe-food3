@@ -249,30 +249,6 @@ export const InputConfirmaSenha = styled.input`
 
 `
 
-export const LabelConfirmaSenhaIncorreta =styled.label`
-    width: 78px;
-    height: 18px;
-    margin: 3px 234px 43px 16px;
-    padding-right:20px;
-    padding-left:3px;
-    font-family: Roboto;
-    font-size: 12px;
-    letter-spacing: -0.29px;
-    color: red;
-    position: relative;
-    top: 13px;
-    left: 20px;
-    background-color: white;
-
-`
-
-export const InputConfirmaSenhaIncorreta = styled.input`
-     width: 328px;
-    height: 56px;
-    font-family: Roboto;
-    border: solid 1px  red; 
-
-`
 
 
 export const ContainerButton = styled.div`
