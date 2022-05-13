@@ -5,7 +5,7 @@ import { Login } from '../pages/Login/index'
 import { Home } from '../pages/Home/index'
 import { Restaurant } from '../pages/Restaurant'
 import { Cart } from '../pages/Cart'
-import { Perfil } from '../pages/Profile/Editarperfil/Perfil'
+import { Perfil } from '../pages/Profile/Editarperfil/EditarPerfil'
 import { EditarEndereco } from '../pages/Profile/Endereco/EditarEndereco'
 import {MeuPerfil} from '../pages/Profile/MeuPerfil/MeuPerfil'
 import {Cadastro} from "../pages/Login/Cadastro/Cadastro"
