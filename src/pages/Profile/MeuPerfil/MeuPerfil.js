@@ -1,8 +1,12 @@
 import React from "react";
 import { API } from "../../../services/Api";
+
+import { MenuNavegacao } from "../../../components/MenuNavegacao";
+
 import { useState, useEffect} from "react";
 import {BarraDenavegaçao} from "../../../components/barradenavegaçao";
 import { Perfil } from "../Editarperfil/EditarPerfil";
+
 
 
 
@@ -65,7 +69,8 @@ export const MeuPerfil = () => {
       <p>{endereco.neighbourhood}</p>
       <p>{endereco.number}</p>
       <p>{endereco.state}</p>
+       <MenuNavegacao/>
+    </div>
 
-</div>
   );
 };

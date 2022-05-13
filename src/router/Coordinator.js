@@ -2,6 +2,7 @@ export const goToLogin = (navigate) => {
   navigate("/");
 };
 
+
 export const goToHome = navigate => {
   navigate('/home')
 }
@@ -12,7 +13,7 @@ export const goToBuscar = navigate => {
 export const goToRestaurant = (navigate, restaurantId) => {
   navigate(`/restaurante/${restaurantId}`);
 };
-
+ 
 export const goToCart = (navigate) => {
   navigate("/carrinho");
 };

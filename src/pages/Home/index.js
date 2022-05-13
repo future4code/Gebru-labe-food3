@@ -22,8 +22,8 @@ export const Home = () => {
  
   const URL = 'https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants'
   
-  const [restaurante, SetRestaurante] =  useState("")
-  const [categ, SetCateg] = useState()
+  const [restaurante, SetRestaurante] =  useState()
+  const [categ, SetCateg] = useState("Árabe")
  
   useEffect(() => {
   axios
@@ -43,10 +43,7 @@ export const Home = () => {
      if (categ == i.category) {
       
       return i.category  
-    } else {
-      return i
-    }
-     
+    } 
   }
    )
   .map((i)=>{
