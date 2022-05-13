@@ -4,9 +4,9 @@ import { API } from "../../../services/Api";
 import { useNavigate } from "react-router-dom";
 import { goToEndereco } from "../../../router/Coordinator";
 import { goToLogin } from "../../../router/Coordinator";
-import {ContainerEndereco} from "./styles"
+import {ContainerEndereco} from "./styledEndereço"
 import {BarraDenavegaçao} from "../../../components/barradenavegaçao"
-import { FormContainer } from "./styles";
+import {InputPlac,SubmitButto,ContainerButton,LabelLogradouro, Logradouro,LabelNumero,Numero,LabelComplemento,Complemento,LabelBairro,Bairro,LabelCidade,Cidade,LabelEstado,Estado} from "./styledEndereço"
 
 export const EditarEndereco = () => {
   const navigate = useNavigate();
@@ -36,12 +36,17 @@ export const EditarEndereco = () => {
 
   return (
     <ContainerEndereco>
-      <BarraDenavegaçao>Endereço</BarraDenavegaçao>
+      <BarraDenavegaçao
+      pageName={"Endereço"}
+      
+      />
       {/* <button onClick={() => goToLogin(navigate)}>Voltar</button> */}
-      <h1>Endereço</h1>
+     
 
-      <FormContainer onSubmit={submitEditarEndereco}>
-        <input
+      <form onSubmit={submitEditarEndereco}>
+        <LabelLogradouro>Logradouro*</LabelLogradouro>
+        <Logradouro>
+        <InputPlac
           name={"street"}
           value={form.street}
           onChange={onChange}
@@ -51,7 +56,11 @@ export const EditarEndereco = () => {
           // title={"Mínimo 3 caracteres"}
           type={"text"}
         />
-        <input
+        </Logradouro>
+        
+        <LabelNumero> Número* </LabelNumero>
+        <Numero>
+        <InputPlac
           name={"number"}
           value={form.number}
           onChange={onChange}
@@ -59,7 +68,11 @@ export const EditarEndereco = () => {
           required
           type={"number"}
         />
-        <input
+        </Numero>
+        
+        <LabelComplemento> Complemento</LabelComplemento>
+        <Complemento>
+        <InputPlac
           name={"complement"}
           value={form.complement}
           onChange={onChange}
@@ -67,7 +80,11 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-        <input
+        </Complemento>
+
+        <LabelBairro> Bairro</LabelBairro>
+        <Bairro> 
+        <InputPlac
           name={"neighbourhood"}
           value={form.neighbourhood}
           onChange={onChange}
@@ -78,7 +95,11 @@ export const EditarEndereco = () => {
           type={"text"}
           // maxLength={11}
         />
-        <input
+        </Bairro>
+
+        <LabelCidade>Cidade</LabelCidade>
+        <Cidade>
+        <InputPlac
           name={"city"}
           value={form.city}
           onChange={onChange}
@@ -86,7 +107,11 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-        <input
+        </Cidade>
+        
+        <LabelEstado>Estado</LabelEstado>
+        <Estado>
+        <InputPlac
           name={"state"}
           value={form.state}
           onChange={onChange}
@@ -94,9 +119,12 @@ export const EditarEndereco = () => {
           required
           type={"text"}
         />
-
-        <button>Salvar</button>
-      </FormContainer>
+        </Estado>
+        
+        <ContainerButton>
+        <SubmitButto>Salvar</SubmitButto>
+        </ContainerButton>
+      </form>
     </ContainerEndereco>
   );
 };

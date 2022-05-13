@@ -12,9 +12,6 @@ import casaColorida from "./casa-colorida.png"
 import usuarioColorido from "./usuario-colorido.png"
 import carrinhoColorido from "./carrinho-colorido.png"
 
-
-
-
 export const MenuNavegacao= () => {
 
   const navigate = useNavigate()
