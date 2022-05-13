@@ -164,3 +164,11 @@ export const ButtonFotter = styled.button`
     background: none;
 
 `
+
+export const ButtonMostraSenha = styled.button`
+
+position: relative;
+left: 302px;
+bottom: 103px;
+border: none;
+`
