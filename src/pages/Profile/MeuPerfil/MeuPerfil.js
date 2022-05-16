@@ -1,5 +1,8 @@
 import React from "react";
 import { API } from "../../../services/Api";
+
+import { MenuNavegacao } from "../../../components/MenuNavegacao";
+
 import { useState, useEffect} from "react";
 import {BarraDenavegaçao} from "../../../components/barradenavegaçao";
 import { MeuPerfil } from "../Editarperfil/EditarPerfil";
@@ -9,8 +12,14 @@ import { goToFeedPage, goToCartPage} from '../../routes/Cordinator'
 import {IconButton, Typography,  Divider} from '@material-ui/core'
 
 
-export const UserPerfil = () => {
-  const [perfil, setUserPerfil] = useState("");
+
+
+
+
+
+export const MeuPerfil = () => {
+  const [perfil, setPerfil] = useState("");
+
   const [endereco, setEndereco] = useState("");
   const [pedidos, setPedido] = useState("");
   useEffect(()=>{
@@ -91,6 +100,7 @@ export const UserPerfil = () => {
  return (
     <><>
       <BarraDenavegaçao pageName={"Meu Perfil"} />
+
     </><ProfilePageContainer>
 
         <p>{perfil.name}</p>

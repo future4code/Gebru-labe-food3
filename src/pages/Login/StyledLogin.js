@@ -6,7 +6,7 @@ export const ContainerGeral = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    
 `
 
 export const ContainerGeralLogin = styled.div`
@@ -84,19 +84,6 @@ export const RectangleSenha = styled.div`
   
 `
 
-
-
-export const InputPlacSenha = styled.input`
-
-    width: 328px;
-    height: 56px;
-    font-family: Roboto;
-    border: solid 1px  #b8b8b8;
-    margin-right: 0px;
-    
-
-`
-
 export const LabelSenha= styled.label`
     width: 78px;
     height: 18px;
@@ -112,6 +99,20 @@ export const LabelSenha= styled.label`
     background-color: white;
 
 `
+
+
+export const InputPlacSenha = styled.input`
+
+    width: 328px;
+    height: 56px;
+    font-family: Roboto;
+    border: solid 1px  #b8b8b8;
+    margin-right: 0px;
+    
+
+`
+
+
 export const ContainerButton = styled.div`
 
     width: 360px;
@@ -162,4 +163,12 @@ export const ButtonFotter = styled.button`
     border: none;
     background: none;
 
+`
+
+export const ButtonMostraSenha = styled.button`
+
+position: relative;
+left: 302px;
+bottom: 103px;
+border: none;
 `
